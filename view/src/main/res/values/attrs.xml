@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RefreshCircleView">
+        <attr name="CircleRadius" format="dimension|reference"/>
+        <attr name="CircleColor" format="color|reference"/>
+        <attr name="CircleWidth" format="dimension|reference"/>
+        <attr name="CircleStartAngle" format="integer|reference"/>
+    </declare-styleable>
+</resources>
