@@ -4,7 +4,8 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
-import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import cn.shawn.view.recyclerview.iinterface.OnItemClickListener;
 import cn.shawn.view.recyclerview.iinterface.OnNetworkRefreshListener;
@@ -14,11 +15,14 @@ import cn.shawn.view.recyclerview.utils.NetworkUtils;
 
 
 public class CommonRvDemoActivity extends AppCompatActivity implements OnItemClickListener, OnNetworkRefreshListener, OnRefreshLoadListener {
+
     public static final String TAG  = CommonRvDemoActivity.class.getSimpleName();
+
     private RlRecyclerView mRv;
     private CommonRvDemoAdapter mAdapter;
     private Handler mHandler = new Handler();
     private int mLoadCounts = 0;
+    private int mListCount ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +30,26 @@ public class CommonRvDemoActivity extends AppCompatActivity implements OnItemCli
         setContentView(R.layout.activity_main);
         initView();
         initData();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.option,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.normal:
+                mListCount = 15;
+                break;
+            case R.id.empty:
+                mListCount = 0;
+                break;
+        }
+        initData();
+        return true;
     }
 
     private boolean checkNetworkState(){
@@ -44,7 +68,7 @@ public class CommonRvDemoActivity extends AppCompatActivity implements OnItemCli
         mHandler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                mAdapter.showData(DataUtil.generateData(10,5));
+                mAdapter.showData(DataUtil.generateData(mListCount,0));
                 mRv.stopRefresh();
             }
         },1000);

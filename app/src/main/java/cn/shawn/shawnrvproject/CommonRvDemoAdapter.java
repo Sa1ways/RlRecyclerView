@@ -1,5 +1,6 @@
 package cn.shawn.shawnrvproject;
 
+import android.graphics.Color;
 import android.widget.TextView;
 
 import cn.shawn.view.recyclerview.adapter.CommonAdapter;
@@ -18,7 +19,8 @@ public class CommonRvDemoAdapter extends CommonAdapter<String> {
 
     @Override
     public void convert(ViewHolder holder, int position, String info) {
-        ((TextView)holder.getView(R.id.tv)).setText(String.valueOf(position));
+        ((TextView)holder.getView(R.id.tv)).setText("item position"+String.valueOf(position));
+        ((TextView)holder.getView(R.id.tv)).setTextColor(Color.WHITE);
     }
 
 }
