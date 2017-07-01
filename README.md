@@ -32,6 +32,7 @@ public class CommonRvDemoAdapter extends CommonAdapter<String> {
 # MultiAdapter in this way:
 
 public class RvMultiTypeAdapter extends MultiTypeAdapter<String> {
+
     @Override
     public void addItemTypeDelegate() {
         mDelegateManager.addDelegate(new ItemTypeDelegate<String>() {
