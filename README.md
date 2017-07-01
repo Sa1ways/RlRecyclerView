@@ -67,11 +67,13 @@ public class RvMultiTypeAdapter extends MultiTypeAdapter<String> {
             }
         });
     }
+
 }
 
 #Detail and Api:
 
 for more details , Plz download the demo
+
 To be continued( = - =)
 
 #finally: issues are welcomed !
