@@ -1,11 +1,11 @@
 # RlRecyclerView
 A expandable RecyclerView implements kinds of functional features ,such as HeaderView FooterView ,EmptyView ,NetworkErrorView .. U can custom those functional effects  as u wish
 # Normal List
-![image](https://github.com/white4hy/PopWin4Edit/blob/master/screenshots/toast1.gif)
+![image](https://github.com/Sa1ways/RlRecyclerView/blob/master/shots/normal.gif)
 # Empty View
-![image](https://github.com/white4hy/PopWin4Edit/blob/master/screenshots/device-2016-06-02-193415.png)
+![image](https://github.com/Sa1ways/RlRecyclerView/blob/master/shots/empty.gif)
 # NetworkErrorView
-![image](https://github.com/white4hy/PopWin4Edit/blob/master/screenshots/device-2016-06-02-193415.png)
+![image](https://github.com/Sa1ways/RlRecyclerView/blob/master/shots/network.gif)
 ＃还是要晚点再插入图片，先插入一些文字吧
 12个最浪费生命的习惯
 
@@ -24,6 +24,3 @@ A expandable RecyclerView implements kinds of functional features ,such as Heade
 7.没有照顾好身体；
 
 8.不愿离开舒适区……对照，改正！停止浪费你的生命，去奋斗、去学习、去旅行，趁年轻！
-
-格式是![image］()  注意是英文格式
-![image](http://photo.enterdesk.com/2011-4-7/enterdesk.com-FE27CE0DA5B25225535DEFAD4270AA34.jpg);
