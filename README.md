@@ -6,21 +6,73 @@ A expandable RecyclerView implements kinds of functional features ,such as Heade
 ![image](https://github.com/Sa1ways/RlRecyclerView/blob/master/shots/empty.gif)
 # NetworkErrorView
 ![image](https://github.com/Sa1ways/RlRecyclerView/blob/master/shots/network.gif)
-＃还是要晚点再插入图片，先插入一些文字吧
-12个最浪费生命的习惯
 
-1.花费太多时间在不该做的事上，比如打游戏、沉迷酒精；
 
-2.总是抱怨；
+＃ RecyclerView.Adapter
+U can use extends the CommonAdapter to complete a recyclerView adapter when the itemType is just one,
+and the MultiAdapter for multi types quickly .The usage is as follows:
 
-3.停止学习；
+# CommonAdapter<T>
 
-4.满脑子都是消极想法；
+public class CommonRvDemoAdapter extends CommonAdapter<String> {
 
-5.没有计划；
+    @Override
+    public int getItemLayoutId() {
+        return R.layout.layout_item;
+    }
 
-6.花太多时间和对你成长没有贡献的人一起；
+    @Override
+    public void convert(ViewHolder holder, int position, String info) {
+        ((TextView)holder.getView(R.id.tv)).setText("item position"+String.valueOf(position));
+        ((TextView)holder.getView(R.id.tv)).setTextColor(Color.WHITE);
+    }
 
-7.没有照顾好身体；
+}
 
-8.不愿离开舒适区……对照，改正！停止浪费你的生命，去奋斗、去学习、去旅行，趁年轻！
+# MultiAdapter in this way:
+
+public class RvMultiTypeAdapter extends MultiTypeAdapter<String> {
+    @Override
+    public void addItemTypeDelegate() {
+        mDelegateManager.addDelegate(new ItemTypeDelegate<String>() {
+            @Override
+            public int getItemLayoutId() {
+                return 0;
+            }
+
+            @Override
+            public boolean isTypeForItem(int position, String s) {
+                return false;
+            }
+
+            @Override
+            public void convert(ViewHolder holder, int position, String info) {
+
+            }
+        }).addDelegate(new ItemTypeDelegate<String>() {
+            @Override
+            public int getItemLayoutId() {
+                return 0;
+            }
+
+            @Override
+            public boolean isTypeForItem(int position, String s) {
+                return false;
+            }
+
+            @Override
+            public void convert(ViewHolder holder, int position, String info) {
+
+            }
+        });
+    }
+}
+
+#Detail and Api:
+
+for more details , Plz download the demo
+To be continued( = - =)
+
+#finally: issues are welcomed !
+
+

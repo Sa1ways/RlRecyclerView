@@ -16,10 +16,11 @@ public class ItemTypeDelegateManager<T> {
      * 向manage中添加代理,用index作为item的viewType
      * @param delegate
      */
-    public void addDelegate(ItemTypeDelegate<T> delegate){
+    public ItemTypeDelegateManager<T> addDelegate(ItemTypeDelegate<T> delegate){
         if(mDelegates.indexOfValue(delegate) < 0){
             mDelegates.put(mDelegates.size() , delegate);
         }
+        return this;
     }
 
     /**
