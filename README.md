@@ -76,6 +76,6 @@ for more details , Plz download the demo
 
 To be continued( = - =)
 
-#finally: issues are welcomed !
+#finally: issues is welcomed !
 
 
